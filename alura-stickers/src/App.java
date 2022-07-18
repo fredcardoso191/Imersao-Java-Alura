@@ -32,6 +32,7 @@ public class App {
                 //System.out.print("\u2B50");
                 //System.out.print("*");
             }
+            System.out.print("\n");
         }
     }
 }
