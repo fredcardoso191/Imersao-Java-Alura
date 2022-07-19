@@ -23,7 +23,7 @@ public class App {
                 url = "https://imdb-api.com/en/API/MostPopularMovies/(Your API key here)";
                 break;
             } else if (value == 2) {
-                url = "https://mocki.io/v1/9a7c1ca9-29b4-4eb3-8306-1adb9d159060";
+                url = "https://imdb-api.com/en/API/Top250Movies/(Your API key here)";
                 break;
             } else {
                 System.out.println("Invalid value.");
