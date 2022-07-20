@@ -1,4 +1,6 @@
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -23,7 +25,7 @@ public class App {
                 url = "https://imdb-api.com/en/API/MostPopularMovies/(Your API key here)";
                 break;
             } else if (value == 2) {
-                url = "https://imdb-api.com/en/API/Top250Movies/(Your API key here)";
+                url = "https://mocki.io/v1/9a7c1ca9-29b4-4eb3-8306-1adb9d159060";
                 break;
             } else {
                 System.out.println("Invalid value.");
@@ -42,10 +44,16 @@ public class App {
         List<Map<String, String>> movieList = parser.parse(body);
 
         //display and manipulate data
+        var generate = new StickerGenerator();
         for (Map<String, String> movie : movieList) {
             try {
+                String imageUrl = movie.get("image");
+                String title = movie.get("title");
+                String fileName = title + ".png";
+                InputStream inputStream = new URL(imageUrl).openStream();
+                generate.create(inputStream, fileName);
+
                 System.out.println("\nTitle: " + movie.get("title"));
-                System.out.println("Image: " + movie.get("image"));
                 double rating = Double.parseDouble(movie.get("imDbRating"));
                 System.out.print("Rating: ");
                 //System.out.print("Star Rating: ");
@@ -65,12 +73,12 @@ public class App {
         System.out.print("Enter a value (Y/N): ");
         sc.nextLine();
         char op = sc.nextLine().charAt(0);
-        if (op == 'y') {
+        if (op == 'y' || op == 'Y') {
             System.out.print("Enter movie name: ");
             String name = sc.nextLine();
             System.out.print("Enter a rating (0-10): ");
             double av = sc.nextDouble();
-            System.out.println("\nUser rating for the movie " + name);
+            System.out.println("User rating for the movie " + name);
             //System.out.println("\nTitle: " + name);
             System.out.print("Rating: ");
             for (int i = 0; i < Math.round(av); i++) {
