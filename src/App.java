@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URL;
@@ -64,6 +65,8 @@ public class App {
                 }
             } catch (NumberFormatException ex) {
                 System.out.print("Invalid format.");
+            } catch (FileNotFoundException ex) {
+                System.out.print("Reading error.");
             }
             System.out.println("\n");
         }
