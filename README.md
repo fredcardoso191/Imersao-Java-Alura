@@ -15,5 +15,5 @@ https://imdb-api.com/en/API/MostPopularMovies/(Your API key here)
 
 ### Using URL with Java
 ```java
-String url = "https://imdb-api.com/en/API/MostPopularMovies/(Your API key here)"
+String url = "https://imdb-api.com/en/API/MostPopularMovies/(Your API key here)";
 ```
