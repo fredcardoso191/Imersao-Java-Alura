@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Imersao-Java-Alura.iml" filepath="$PROJECT_DIR$/Imersao-Java-Alura.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imdbapi.iml" filepath="$PROJECT_DIR$/imdbapi.iml" />
     </modules>
   </component>
 </project>
